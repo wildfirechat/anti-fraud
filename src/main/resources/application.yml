@@ -1,0 +1,19 @@
+# 服务监听端口
+server:
+  port: 8895
+
+# IM相关配置
+im:
+  # IM服务管理端口地址
+  admin_url: http://192.168.1.5:18080
+  # IM服务管理密钥
+  admin_secret: 123456
+  # 收到敏感词后的提示语
+  notification_text: 近期发现多起诈骗案件，包括不限于以下形式：投资、博彩、兼职刷单、模特、卖*、约*、谈感情、冒充客服、冒充公检法等方式骗取钱财。请您注意，在这个软件上谈钱的一定是骗子，请您坚决拒绝金钱来往!!!
+
+# 转发通知管理员或管理团队
+forward:
+  # 转发目标会话的类型，0是单聊，1是群组
+  conversation_type: 1
+  # 转发目标会话
+  conversation_target: manger_group
