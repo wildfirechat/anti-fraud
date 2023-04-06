@@ -33,6 +33,9 @@ public class ServiceImpl implements Service {
     @Value("${im.notification_text}")
     private String mNotificationText;
 
+    @Value("${im.notification_text2}")
+    private String mNotificationText2;
+
     private ExecutorService cacheExecutor;
 
     @PostConstruct
@@ -74,6 +77,11 @@ public class ServiceImpl implements Service {
                     notifyPayload.setType(90);
                     notifyPayload.setContent(mNotificationText);
                     MessageAdmin.sendMessage(outputMessageData.getSender(), outputMessageData.getConv(), notifyPayload);
+
+                    MessagePayload notifyPayload2 = new MessagePayload();
+                    notifyPayload2.setType(90);
+                    notifyPayload2.setContent(mNotificationText2);
+                    MessageAdmin.sendMessage(outputMessageData.getSender(), outputMessageData.getConv(), notifyPayload2);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
