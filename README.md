@@ -5,7 +5,7 @@
 1. 配置IM服务的敏感词命中后回调地址为本服务，当本服务收到IM服务转发过来的命中敏感词的消息后，才会通知管理员并发送警示提醒。
     ```
     ##敏感消息转发地址
-    message.sensitive.forward.url http://localhost:8888/im_event/message
+    message.sensitive.forward.url http://localhost:8895/sensitive_message
     ```
 2. 需要在IM服务添加敏感词，只有用户发言命中敏感词后，才会把消息转发给此服务。
 
