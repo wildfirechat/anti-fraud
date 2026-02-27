@@ -51,6 +51,11 @@ public class ServiceImpl implements Service {
             return;
         }
 
+        if (outputMessageData.getSender().startsWith("robot_") || (outputMessageData.getConv().getType() == 1 && outputMessageData.getConv().getTarget().startsWith("robot_"))) {
+            LOG.info("机器人消息忽略");
+            return;
+        }
+
         if (outputMessageData.getSender().equals("admin") || (outputMessageData.getConv().getType() == 1 && outputMessageData.getConv().getTarget().equals("admin"))) {
             LOG.info("Admin消息忽略");
             return;
