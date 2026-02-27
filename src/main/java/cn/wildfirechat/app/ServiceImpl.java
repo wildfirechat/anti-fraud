@@ -46,12 +46,12 @@ public class ServiceImpl implements Service {
 
     @Override
     public void onReceiveMessage(OutputMessageData outputMessageData) {
-        if (outputMessageData.getSender().equals("FireRobot") || (outputMessageData.getConv().getType() == 1 && outputMessageData.getConv().getTarget().equals("FireRobot"))) {
+        if (outputMessageData.getSender().equals("FireRobot") || (outputMessageData.getConv().getType() == 0 && outputMessageData.getConv().getTarget().equals("FireRobot"))) {
             LOG.info("机器人消息忽略");
             return;
         }
 
-        if (outputMessageData.getSender().startsWith("robot_") || (outputMessageData.getConv().getType() == 1 && outputMessageData.getConv().getTarget().startsWith("robot_"))) {
+        if (outputMessageData.getSender().startsWith("robot_") || (outputMessageData.getConv().getType() == 0 && outputMessageData.getConv().getTarget().startsWith("robot_"))) {
             LOG.info("机器人消息忽略");
             return;
         }
